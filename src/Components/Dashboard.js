@@ -6,7 +6,8 @@ function Dashboard() {
     <div className='dashboard'>
         <div className='leftSidebar'></div>
         <main>
-            <nav className='dash-nav'></nav>
+            <nav className='dash-nav'><h1>Hello, "name"</h1></nav>
+            <div className='div-button'><button>New Person +</button></div>
         </main>
         <div className='rightSidebar'></div>
     </div>

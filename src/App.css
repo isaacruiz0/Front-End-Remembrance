@@ -247,3 +247,27 @@ body{
   grid-column-start: 1/2;
   background-color: #060606; 
 }
+.dash-nav{
+  background-color: #F2F2F2;
+  height: 10%;
+  display: flex;
+  align-items: center;
+}
+.dash-nav h1{
+  margin-left: 5%;
+  font-size: 2.25rem;
+}
+.div-button{
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+  
+}
+.div-button button{
+  width: fit-content;
+  block-size: fit-content;
+  font-size: 1em;
+  position: absolute;
+  padding: .5em;
+  cursor: pointer;
+}
