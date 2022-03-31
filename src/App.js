@@ -2,6 +2,7 @@
 import WelcomePage from './Components/WelcomePage';
 import SignUp from './Components/SignUp';
 import Login from './Components/Login';
+import Dashboard from './Components/Dashboard';
 // CSS
 import './App.css';
 // Router Imports
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element = {<WelcomePage />}/>
           <Route path="/signup" element = {<SignUp />}/>
           <Route path="/login" element = {<Login />}/>
+          <Route path="/dashboard" element = {<Dashboard />}/>
         </Routes>
       </Router>
     </div>

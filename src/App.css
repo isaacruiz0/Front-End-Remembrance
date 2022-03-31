@@ -35,7 +35,7 @@ body{
 
 }
 .quote{
-  animation: transitionIn 6.5s;
+  animation: transitionIn 6s;
   color:white;
   position: absolute;
   top: 10%;
@@ -70,7 +70,7 @@ body{
 }
 
 .login{
-  animation: transitionIn 8s;
+  animation: transitionIn 7s;
   display: flex;
   justify-content: space-between;
   width: 60%;
@@ -82,7 +82,7 @@ body{
   margin-right: auto;
 }
 /* ////////////////////////////// */
-/* C R E A T E    A C C O U N T   C O M P O N E N T
+/*S I G N     U P    C O M P O N E N T
 /* ////////////////////////////// */
 .signUp{
   height: 100vh;
@@ -104,12 +104,16 @@ body{
   font-size: 3.5rem;
   text-align: center;
   margin-top: 5%;
+  cursor: pointer;
+  margin-bottom: 5%;
+
 }
 .signUp .signUpBox{
   background-color: white;
   width:50%;
   height:65%;
-  margin-top: 10%;
+  margin-top: auto;
+  margin-bottom: auto;
   margin-left: auto;
   margin-right: auto;
   border-radius: .3em;
@@ -120,6 +124,7 @@ body{
   font-weight: 400;
   text-align: center;
   padding-top: 5%;
+
 }
 
 .signUp .signup-form label{
@@ -127,7 +132,6 @@ body{
   margin-top: 7%;
   font-size: 1.25rem;
   font-weight: 275;
-
 }
 .signUp .signup-form{
   margin-left: auto;
@@ -171,6 +175,7 @@ body{
   font-size: 3.5rem;
   text-align: center;
   margin-top: 5%;
+  cursor: pointer;
 }
 .loginDiv .leftSideBar{
   grid-column-start: 1/2;
@@ -181,8 +186,64 @@ body{
   background-color: #060606; 
 }
 .login-form{
-
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
 }
 .login-box{
+  background-color: white;
+  width:55%;
+  height:40%;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: .3em;
+  display: flex;
+  flex-direction: column;
+}
+.login-box label{
+  display: flex;
+  margin-top: 7%;
+  font-size: 1.25rem;
+  font-weight: 275;
+}
+.box-title{
+  font-weight: 400;
+  text-align: center;
+  padding-top: 5%;
+}
+.login-form input{
+  width: 98%;
+  padding: 7px;
+  box-sizing: border-box;
+  border: none;
+  border: 1px solid gray;
+  border-radius: 6px;
+  outline: none;
+}
+.login-box input[type="button"]{
+  margin-top:10%;
+  height: 2rem;
+  background-color: #49c1a2;
+  color:white;
+  font-size: 1.2rem;
+  border: none;
+}
 
+/* //////////////////// */
+/* D A S H B O A R D    C O M P O N E N E N T */
+/* //////////////////// */
+.dashboard{
+  height: 100vh;
+  background-color: black;
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+}
+.dashboard .leftSidebar{
+  grid-column-start: 1/2;
+  background-color: #060606; 
+}
+.dashboard .rightSidebar{
+  grid-column-start: 1/2;
+  background-color: #060606; 
 }
