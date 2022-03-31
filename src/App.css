@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Merriweather+Sans:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Merriweather+Sans:ital,wght@1,300&family=Montserrat:wght@300&display=swap');
 * {
 	margin: 0;
 	padding: 0;
@@ -13,8 +14,9 @@ body{
 .app{
   height: 100vh;
 }
-
-/* Welcome Page Component */
+/* //////////////////////////// */
+/* W E L C O M E   P A G E   C O M P O N E N T */
+/* //////////////////////////// */
 .welcomePage{
   background-color: black;
   height: 100vh;
@@ -33,20 +35,138 @@ body{
 
 }
 .quote{
-  animation: transitionIn 6s;
+  animation: transitionIn 6.5s;
   color:white;
   position: absolute;
-  top: 20%;
+  top: 10%;
   padding: 0 20% 0 20%;
   font-family: Merriweather, sans-serif;
   line-height: 1.3em;
   font-size: 250%;
+  width: 60%;
 }
 
 .accountInfo{
   color: white;
   font-family: Merriweather, sans-serif;
   font-weight: 1;
+  cursor: pointer;
+}
+/* this will be an underline animation */
+.accountInfo::after{
+  content:'';
+  height: 2px;
+  width: 0%;
+  background-color: white;
+  display: block;
+  transition: .2s ease-in-out;
+}
+.accountInfo:hover::after{
+  content:'';
+  height: 2px;
+  width: 100%;
+  background-color: white;
+  display: block;
 }
 
+.login{
+  animation: transitionIn 8s;
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  position:absolute;
+  bottom: 20%;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto;
+}
+/* ////////////////////////////// */
+/* C R E A T E    A C C O U N T   C O M P O N E N T
+/* ////////////////////////////// */
+.signUp{
+  height: 100vh;
+  background-color: black;
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+}
+.leftSideBar{
+  grid-column-start: 1/2;
+  background-color: #060606;
+}
+.rightSideBar{
+  grid-column-start: 3/4;
+  background-color: #060606;
+}
+.title{
+  color: #F2F2F2;
+  font-family: Monsterrat, sans-serif;
+  font-size: 3.5rem;
+  text-align: center;
+  margin-top: 5%;
+}
+.signUpBox{
+  background-color: white;
+  width:50%;
+  height:65%;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: .3em;
+  display: flex;
+  flex-direction: column;
+}
+.box-title{
+  font-weight: 400;
+  text-align: center;
+  padding-top: 5%;
+}
 
+.signup-form label{
+  display: flex;
+  margin-top: 7%;
+  font-size: 1.25rem;
+  font-weight: 275;
+
+}
+.signup-form{
+  margin-left: auto;
+  margin-right: auto;
+}
+.signup-form input{
+  width: 98%;
+  padding: 7px;
+  box-sizing: border-box;
+  border: none;
+  border: 1px solid gray;
+  border-radius: 6px;
+  outline: none;
+
+}
+input[type="button"]{
+  margin-top:10%;
+  height: 2rem;
+  background-color: #49c1a2;
+  color:white;
+  font-size: 1.2rem;
+  border: none;
+}
+.signUpBox p{
+  text-align: center;
+  padding-top: 1.75rem;
+  padding-bottom: 1rem;
+}
+/* ///////////////////// */
+/* L O G I N    C O M P O N E N T */
+/* ///////////////////// */
+.signUp{
+  height: 100vh;
+  background-color: black;
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+}
+
+.login .leftSideBar{
+  grid-column-start: 1/2;
+  background-color: #060606; 
+}
