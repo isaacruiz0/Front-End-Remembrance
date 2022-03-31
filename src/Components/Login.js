@@ -2,14 +2,14 @@ import React from 'react'
 
 function Login() {
   return (
-    <div className='login'>
+    <div className='loginDiv'>
         <div className='leftSideBar'></div>
         <main>
             <h1 className='title'>Remembrance</h1>
             <div className='signUpBox'>
               <h1 className='box-title'>Sign Up</h1>
               <p>Lets start remembering the little things</p>
-              <form className='signup-form'>
+              <form className='login-form'>
                 <label>First Name</label>
                 <input type='text' placeholder="" />
                 <label>Email</label>

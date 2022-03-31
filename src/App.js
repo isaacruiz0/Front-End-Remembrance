@@ -16,11 +16,10 @@ function App() {
           <Route path="/" element = {<WelcomePage />}/>
           <Route path="/signup" element = {<SignUp />}/>
           <Route path="/login" element = {<Login />}/>
-
         </Routes>
       </Router>
     </div>
   );
 }
 
-export t default App;
+export default App;
