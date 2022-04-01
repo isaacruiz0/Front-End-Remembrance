@@ -323,7 +323,7 @@ body{
   border-radius: 6px;
   outline: none;
 }
-.person-box input[type="button"]{
+.person-box input[type="submit"]{
   margin-top:10%;
   height: 2rem;
   background-color: #49c1a2;

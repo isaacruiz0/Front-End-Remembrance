@@ -1,5 +1,5 @@
 import React from 'react'
-import{ useEffect, useState } from "react"
+import{ useEffect, useState, useNavigate } from "react"
 import apiUrl from '../apiURL'
 
 
@@ -8,9 +8,12 @@ function Dashboard() {
     // const [currentPeople, setCurrentPeople] = useState([])
     // this will take the mapped data and display
     const [displayPeople, setDisplayPeople] = useState([])
+    
 
     // this will do a get request from my api and return each person
     useEffect(()=>{
+
+
         fetch(apiUrl + '/people')
         //this will fetch data from my api
         .then(res => res.json())
@@ -32,7 +35,9 @@ function Dashboard() {
         <div className='leftSidebar'></div>
         <main>
             <nav className='dash-nav'><h1>Hello, "name"</h1></nav>
-            <div className='div-button'><button>New Person +</button></div>
+            <div className='div-button'>
+                <button>Add Person +</button>
+            </div>
             {displayPeople}
         </main>
         <div className='rightSidebar'></div>
