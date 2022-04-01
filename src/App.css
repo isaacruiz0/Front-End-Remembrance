@@ -271,3 +271,68 @@ body{
   padding: .5em;
   cursor: pointer;
 }
+/* peoplesCards */
+.peopleCards{
+  background-color: white;
+  margin: 10%;
+}
+
+/* ////////////////////////// */
+/* C R E A T E   P E R S O N   C O M P O N E N T  */
+/* ////////////////////////// */
+.create-person-div{
+  height: 100vh;
+  background-color: black;
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr; 
+}
+
+.create-person-div .leftSideBar{
+  grid-column-start: 1/2;
+  background-color: #060606; 
+}
+.create-person-div .rightSideBar{
+  grid-column-start: 1/2;
+  background-color: #060606; 
+}
+.person-box{
+  background-color: #F2F2F2;
+  width: 35%;
+  height: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box ;
+  padding: 5%;
+}
+.person-box label{
+  display: flex;
+  display: flex;
+  margin-top: 7%;
+  font-size: 1.25rem;
+  font-weight: 275;
+}
+.person-box input{
+  width: 98%;
+  padding: 7px;
+  box-sizing: border-box;
+  border: none;
+  border: 1px solid gray;
+  border-radius: 6px;
+  outline: none;
+}
+.person-box input[type="button"]{
+  margin-top:10%;
+  height: 2rem;
+  background-color: #49c1a2;
+  color:white;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+}
+.person-box .box-title{
+  margin: 0;
+  padding: 0;
+}

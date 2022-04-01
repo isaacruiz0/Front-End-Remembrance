@@ -3,6 +3,7 @@ import WelcomePage from './Components/WelcomePage';
 import SignUp from './Components/SignUp';
 import Login from './Components/Login';
 import Dashboard from './Components/Dashboard';
+import CreatePerson from './Components/CreatePerson';
 // CSS
 import './App.css';
 // Router Imports
@@ -18,6 +19,8 @@ function App() {
           <Route path="/signup" element = {<SignUp />}/>
           <Route path="/login" element = {<Login />}/>
           <Route path="/dashboard" element = {<Dashboard />}/>
+          <Route path="/createperson" element = {<CreatePerson />}/>
+
         </Routes>
       </Router>
     </div>
