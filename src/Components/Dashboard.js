@@ -9,6 +9,8 @@ function Dashboard() {
     // const [currentPeople, setCurrentPeople] = useState([])
     // this will take the mapped data and display
     const [displayPeople, setDisplayPeople] = useState([])
+    // this will fetch the data again by incrementing
+    const [get, setGet] = useState(0)
     let navigate = useNavigate();
 
     
@@ -22,15 +24,24 @@ function Dashboard() {
         .then(res => res.json())
         //this will create an array of the people data so we can render it
         .then(data => {let peopleArray = data.people.map((person, index)=>{
+            console.log(person._id)
             return(
-                <div className='peopleCards'>
-                    <h1 >{person.firstName} {person.lastName}</h1>
+                <div className='peopleCards' onClick={handleDelete} key={index}>
+                    <button id={person._id}>Delete</button>
+                    <h1>{person.firstName} {person.lastName}</h1>
                 </div>
             )
         })
         setDisplayPeople(peopleArray)
     })
-    }, [])
+    }, [get])
+
+    const handleDelete = (e) =>{
+        console.log(e.target.id)
+        let id = e.target.id;
+        setGet(get + 1)
+        fetch(`http://localhost:5000/${id}`, {method:'DELETE'})
+      }
 
 
   return (

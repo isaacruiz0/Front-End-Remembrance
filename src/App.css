@@ -235,10 +235,11 @@ body{
 /* D A S H B O A R D    C O M P O N E N E N T */
 /* //////////////////// */
 .dashboard{
-  height: auto;
+  height: 100vh;
   background-color: black;
   display: grid;
   grid-template-columns: 1fr 10fr 1fr;
+
 }
 .dashboard .leftSidebar{
   grid-column-start: 1/2;
@@ -260,7 +261,10 @@ body{
 }
 .dashboard main{
   height: auto;
-  background-color: black;  
+  background-color: black;
+  display: flex; /*added*/
+  flex-direction: column; /*added*/
+  
 }
 .div-button{
   display: flex;
