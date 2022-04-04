@@ -1,5 +1,6 @@
 import React from 'react'
-import{ useEffect, useState, useNavigate } from "react"
+import{ useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import apiUrl from '../apiURL'
 
 
@@ -8,6 +9,8 @@ function Dashboard() {
     // const [currentPeople, setCurrentPeople] = useState([])
     // this will take the mapped data and display
     const [displayPeople, setDisplayPeople] = useState([])
+    let navigate = useNavigate();
+
     
 
     // this will do a get request from my api and return each person
@@ -21,7 +24,7 @@ function Dashboard() {
         .then(data => {let peopleArray = data.people.map((person, index)=>{
             return(
                 <div className='peopleCards'>
-                    <h1>{person.firstName} {person.lastName}</h1>
+                    <h1 >{person.firstName} {person.lastName}</h1>
                 </div>
             )
         })
@@ -36,7 +39,7 @@ function Dashboard() {
         <main>
             <nav className='dash-nav'><h1>Hello, "name"</h1></nav>
             <div className='div-button'>
-                <button>Add Person +</button>
+                <button onClick={()=>{navigate("/createperson")}}>Add Person +</button>
             </div>
             {displayPeople}
         </main>

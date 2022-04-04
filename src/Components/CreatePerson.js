@@ -1,5 +1,6 @@
 import React from 'react'
-import {useState, useNavigate} from 'react'
+import { useState } from 'react'
+import { useNavigate } from "react-router-dom"
 import apiUrl from '../apiURL'
 
 function CreatePerson() {
@@ -8,7 +9,7 @@ function CreatePerson() {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
 
-    let navigate = useNavigate();
+    const navigate = useNavigate()
 
     const firstHandleChange = (event) => {
         event.preventDefault();
@@ -46,8 +47,13 @@ function CreatePerson() {
                 <label>Last Name</label>
                 <input type='text' placeholder="" onChange={lastHandleChange}/>
                 <input type="submit" value="Submit" />
+                <div className='return-div'>
+                <button className='return-to-dashboard' onClick={()=>navigate('/dashboard')}> Return to Dashboard</button>
+                </div>
+                
               </form>
             </div>
+            
         </main>
         <div className='rightSideBar'></div>
     </div>

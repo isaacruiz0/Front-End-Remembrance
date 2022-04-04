@@ -4,6 +4,7 @@
 * {
 	margin: 0;
 	padding: 0;
+  box-sizing: border-box;
 }
 body{
   height:100vh
@@ -43,7 +44,7 @@ body{
   font-family: Merriweather, sans-serif;
   line-height: 1.3em;
   font-size: 250%;
-  width: 60%;
+  width: 100%;
 }
 
 .accountInfo{
@@ -234,7 +235,7 @@ body{
 /* D A S H B O A R D    C O M P O N E N E N T */
 /* //////////////////// */
 .dashboard{
-  height: 100vh;
+  height: auto;
   background-color: black;
   display: grid;
   grid-template-columns: 1fr 10fr 1fr;
@@ -256,6 +257,10 @@ body{
 .dash-nav h1{
   margin-left: 5%;
   font-size: 2.25rem;
+}
+.dashboard main{
+  height: auto;
+  background-color: black;  
 }
 .div-button{
   display: flex;
@@ -298,7 +303,7 @@ body{
 .person-box{
   background-color: #F2F2F2;
   width: 35%;
-  height: 50%;
+  height: 55%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 15%;
@@ -335,4 +340,23 @@ body{
 .person-box .box-title{
   margin: 0;
   padding: 0;
+}
+.return-to-dashboard{
+  background-color: #F2F2F2;
+  margin-top:10%;
+  height: 2rem;
+  background-color: #4987c1;
+  color:white;
+  font-size: 1rem;
+  padding: .5rem;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.return-div{
+  display: flex;
+  justify-content: center;
+}
+.person-info-form{
+  box-sizing: border-box;
 }
