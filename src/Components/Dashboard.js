@@ -28,7 +28,11 @@ function Dashboard() {
             return(
                 <div className='peopleCards' onClick={handleDelete} key={index}>
                     <button id={person._id}>Delete</button>
-                    <h2>Name:{person.firstName} {person.lastName}</h2>
+                    <h2>Name: {person.firstName} {person.lastName}</h2>
+                    <h2>Birthday: {person.birthDay}</h2>
+                    <h2>Gender: {person.gender}</h2>
+                    <h2>Pronouns: {person.pronouns}</h2>
+                    <h2>Relationship: {person.relationship}</h2>
                 </div>
             )
         })

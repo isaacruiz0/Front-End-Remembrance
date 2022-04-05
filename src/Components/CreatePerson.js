@@ -56,9 +56,20 @@ function CreatePerson() {
     },
     body: JSON.stringify({
         "firstName":firstName.toString(),
-        "lastName":lastName.toString()
+        "lastName":lastName.toString(),
+        "birthDay":birthDay.toString(),
+        "gender":gender.toString(),
+        "pronouns":pronouns.toString(),
+        "relationship":relationship.toString()
     })
+    
   })
+  setFirstName("");
+  setLastName("");
+  setBirthday("");
+  setGender("");
+  setPronouns("");
+  setRelationship("");
       }
 
 
@@ -70,17 +81,17 @@ function CreatePerson() {
               <h2 className='box-title'>Who would you like to remember?</h2>
               <form className='person-info-form' onSubmit={handleSubmit}>
                 <label>First Name </label>
-                <input type='text' placeholder="" onChange={firstHandleChange}/>
+                <input type='text' placeholder="" onChange={firstHandleChange} value={firstName}/>
                 <label>Last Name </label>
-                <input type='text' placeholder="" onChange={lastHandleChange}/>
+                <input type='text' placeholder="" onChange={lastHandleChange} value={lastName}/>
                 <label>Birthday </label>
-                <input type='text' placeholder="" onChange={relationshipHandle}/>
+                <input type='text' placeholder="" onChange={birthdayHandle} value={birthDay}/>
                 <label>Gender </label>
-                <input type='text' placeholder="" onChange={genderHandle}/>
+                <input type='text' placeholder="" onChange={genderHandle} value={gender}/>
                 <label>Pronouns </label>
-                <input type='text' placeholder="" onChange={birthdayHandle}/>
+                <input type='text' placeholder="" onChange={pronounsHandle} value={pronouns}/>
                 <label>Relationship </label>
-                <input type='text' placeholder="" onChange={pronounsHandle}/>
+                <input type='text' placeholder="" onChange={relationshipHandle} value={relationship}/>
                 <input type="submit" value="Submit" />
                 <div className='return-div'>
                 <button className='return-to-dashboard' onClick={()=>navigate('/dashboard')}> Return to Dashboard</button>

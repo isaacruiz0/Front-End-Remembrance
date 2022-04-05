@@ -290,10 +290,15 @@ body{
 /* C R E A T E   P E R S O N   C O M P O N E N T  */
 /* ////////////////////////// */
 .create-person-div{
-  height: 100vh;
+  height: auto;
   background-color: black;
   display: grid;
   grid-template-columns: 1fr 10fr 1fr; 
+}
+.create-person-div main{
+  height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .create-person-div .leftSideBar{
@@ -307,14 +312,13 @@ body{
 .person-box{
   background-color: #F2F2F2;
   width: 35%;
-  height: 55%;
+  height: fit-content;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 15%;
   display: flex;
   flex-direction: column;
   box-sizing: border-box ;
-  padding: 5%;
+  padding: 3%;
 }
 .person-box label{
   display: flex;
