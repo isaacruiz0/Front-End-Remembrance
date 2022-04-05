@@ -28,7 +28,7 @@ function Dashboard() {
             return(
                 <div className='peopleCards' onClick={handleDelete} key={index}>
                     <button id={person._id}>Delete</button>
-                    <h1>{person.firstName} {person.lastName}</h1>
+                    <h2>Name:{person.firstName} {person.lastName}</h2>
                 </div>
             )
         })
@@ -48,7 +48,7 @@ function Dashboard() {
     <div className='dashboard'>
         <div className='leftSidebar'></div>
         <main>
-            <nav className='dash-nav'><h1>Hello, "name"</h1></nav>
+            <nav className='dash-nav'><h1>Who's worth remembering?</h1></nav>
             <div className='div-button'>
                 <button onClick={()=>{navigate("/createperson")}}>Add Person +</button>
             </div>

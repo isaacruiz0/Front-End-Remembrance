@@ -19,7 +19,7 @@ body{
 /* W E L C O M E   P A G E   C O M P O N E N T */
 /* //////////////////////////// */
 .welcomePage{
-  background-color: black;
+  background-color: #66806A;
   height: 100vh;
 }
 /* transition for fading in */
@@ -87,17 +87,17 @@ body{
 /* ////////////////////////////// */
 .signUp{
   height: 100vh;
-  background-color: black;
+  background-color: #66806A;
   display: grid;
   grid-template-columns: 1fr 10fr 1fr;
 }
 .signUp .leftSideBar{
   grid-column-start: 1/2;
-  background-color: #060606;
+  background-color: #B4C6A6;
 }
 .signUp .rightSideBar{
   grid-column-start: 3/4;
-  background-color: #060606;
+  background-color: #B4C6A6;
 }
 .signUp .title{
   color: #F2F2F2;
@@ -166,7 +166,7 @@ body{
 /* ///////////////////// */
 .loginDiv{
   height: 100vh;
-  background-color: black;
+  background-color: #66806A;
   display: grid;
   grid-template-columns: 1fr 10fr 1fr;
 }
@@ -180,11 +180,11 @@ body{
 }
 .loginDiv .leftSideBar{
   grid-column-start: 1/2;
-  background-color: #060606; 
+  background-color: #B4C6A6; 
 }
 .loginDiv .rightSideBar{
   grid-column-start: 1/2;
-  background-color: #060606; 
+  background-color: #B4C6A6; 
 }
 .login-form{
   margin-left: auto;

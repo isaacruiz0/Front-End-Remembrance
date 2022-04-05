@@ -8,17 +8,44 @@ function CreatePerson() {
     // these two usestates will handle the change of user input
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
+    const [birthDay, setBirthday] = useState('')
+    const [relationship, setRelationship] = useState('')
+    const [gender, setGender] = useState('')
+    const [pronouns, setPronouns] = useState('')
 
     const navigate = useNavigate()
 
+    // FIRST NAME
     const firstHandleChange = (event) => {
         event.preventDefault();
         setFirstName(event.target.value)
     }
+    // LAST NAME
     const lastHandleChange = (event) => {
         event.preventDefault();
         setLastName(event.target.value)
     }
+    // BIRTHDAY
+    const birthdayHandle = (event) => {
+        event.preventDefault();
+        setBirthday(event.target.value)
+    }
+    // RELATIONSHIP
+    const relationshipHandle = (event) => {
+        event.preventDefault();
+        setRelationship(event.target.value)
+    }
+    // GENDER
+    const genderHandle = (event) => {
+        event.preventDefault();
+        setGender(event.target.value)
+    }
+    // PRONOUNS
+    const pronounsHandle = (event) => {
+        event.preventDefault();
+        setPronouns(event.target.value)
+    }
+    // SUBMIT
     const handleSubmit = (event) => {
         event.preventDefault();
         fetch(apiUrl + '/createperson', {
@@ -42,10 +69,18 @@ function CreatePerson() {
             <div className='person-box'>
               <h2 className='box-title'>Who would you like to remember?</h2>
               <form className='person-info-form' onSubmit={handleSubmit}>
-                <label>First Name</label>
+                <label>First Name </label>
                 <input type='text' placeholder="" onChange={firstHandleChange}/>
-                <label>Last Name</label>
+                <label>Last Name </label>
                 <input type='text' placeholder="" onChange={lastHandleChange}/>
+                <label>Birthday </label>
+                <input type='text' placeholder="" onChange={relationshipHandle}/>
+                <label>Gender </label>
+                <input type='text' placeholder="" onChange={genderHandle}/>
+                <label>Pronouns </label>
+                <input type='text' placeholder="" onChange={birthdayHandle}/>
+                <label>Relationship </label>
+                <input type='text' placeholder="" onChange={pronounsHandle}/>
                 <input type="submit" value="Submit" />
                 <div className='return-div'>
                 <button className='return-to-dashboard' onClick={()=>navigate('/dashboard')}> Return to Dashboard</button>
