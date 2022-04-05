@@ -27,7 +27,7 @@ function Dashboard() {
             console.log(person._id)
             return(
                 <div className='peopleCards' onClick={handleDelete} key={index}>
-                    <button id={person._id}>Delete</button>
+                    <button id={person._id} className="deletebutton">X</button>
                     <h2>Name: {person.firstName} {person.lastName}</h2>
                     <h2>Birthday: {person.birthDay}</h2>
                     <h2>Gender: {person.gender}</h2>
@@ -54,7 +54,7 @@ function Dashboard() {
         <main>
             <nav className='dash-nav'><h1>Who's worth remembering?</h1></nav>
             <div className='div-button'>
-                <button onClick={()=>{navigate("/createperson")}}>Add Person +</button>
+                <button className='addButton' onClick={()=>{navigate("/createperson")}}>Add Person +</button>
             </div>
             {displayPeople}
         </main>
