@@ -13,6 +13,7 @@ function WelcomePage() {
         </h2>
         <div className='login'>
             <h1 className='accountInfo' onClick={()=>{navigate("/signup")}}>Sign Up</h1>
+            <h1 className='accountInfo' onClick={()=>{navigate("/dashboard")}}>Guest</h1>
             <h1 className='accountInfo'onClick={()=>{navigate("/login")}}>Login</h1>
         </div>
 
