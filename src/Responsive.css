@@ -1,4 +1,5 @@
 @media only screen and (max-width: 830px) {
+    /* D A S H B O A R D */
     .quote{
         line-height: clamp(2.5rem, 8vw, 20rem);
         font-size : clamp(1.66rem, 5vw, 2.75rem);
@@ -24,4 +25,62 @@
         cursor: pointer;
         
       }
-}
+      /* S I G N U P */
+      .leftSideBar{
+          display: none;
+      }
+      .rightSideBar{
+          display: none;
+      }
+      .signUp{
+        height: 100vh;
+        background-color: #66806A;
+        display: flex;
+        justify-content: center;
+      }
+      .signUp .signUpBox{
+          width: 85%;
+          margin-top: 10%;
+          padding-bottom: 7%;
+      }
+      main{
+          width: 100%;
+      }
+      /* L O G I N */
+      .loginDiv main{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+      }
+      .loginDiv{
+        display: flex;
+        justify-content: center;
+      }
+
+      .login-box{
+          width: 90%;
+          height: fit-content;
+          margin-bottom: 10%;
+      }
+      .login-form{
+        box-sizing: border-box;
+        width: 100%;
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-bottom: 5%;
+      }
+      .login-form label{
+          margin-top: 5%;
+      }
+      .login-box input[type="button"]{
+        margin-top:5%;
+        height: 2rem;
+        background-color: #49c1a2;
+        color:white;
+        font-size: 1.2rem;
+        border: none;
+      }
+      .loginDiv .title{
+        margin: 0;
+      }
+    }

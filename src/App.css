@@ -39,8 +39,8 @@ body{
 
 }
 .quote{
-  animation: transitionIn 6s;
-  color:white;
+  animation: transitionIn 2s;
+  color: #F2F2F2;
   position: absolute;
   top: 10%;
   padding: 0 20% 0 20%;
@@ -48,13 +48,13 @@ body{
   line-height: clamp(3.75vw, 6vw, 20rem);
   font-size : clamp(1rem, 5vw, 2.75rem);
   width: 100%;
-  text-shadow: 1.5px 1.5px rgba(33,33,33,.2);
+  text-shadow: 1.75px 1.75px rgba(33,33,33,.3);
   height: 60%;
 
 }
 
 .accountInfo{
-  color: white;
+  color: #F2F2F2;
   font-family: Merriweather, sans-serif;
   font-weight: 1.5;
   font-size : clamp(1rem, 3.75vw, 5.75rem);
@@ -64,7 +64,7 @@ body{
 /* this will be an underline animation */
 .accountInfo::after{
   content:'';
-  height: 2px;
+  height: .05em;
   width: 0%;
   background-color: white;
   display: block;
@@ -72,7 +72,7 @@ body{
 }
 .accountInfo:hover::after{
   content:'';
-  height: 2px;
+  height: .05em;
   width: 100%;
   background-color: white;
   display: block;
@@ -107,17 +107,19 @@ body{
 .signUp .title{
   color: #F2F2F2;
   font-family: Monsterrat, sans-serif;
-  font-size: 3.5rem;
+  font-size: ;
   text-align: center;
   margin-top: 5%;
   cursor: pointer;
   margin-bottom: 5%;
+  font-size : clamp(2.5rem, 7.75vw, 5.75rem);
 
 }
 .signUp .signUpBox{
   background-color: white;
   width:50%;
-  height:65%;
+  height:fit-content;
+  padding-bottom: 5%;
   margin-top: auto;
   margin-bottom: auto;
   margin-left: auto;
@@ -125,6 +127,8 @@ body{
   border-radius: .3em;
   display: flex;
   flex-direction: column;
+  font-size: 1.5rem;
+  align-items: center;
 }
 .signUp .box-title{
   font-weight: 400;
@@ -135,13 +139,13 @@ body{
 
 .signUp .signup-form label{
   display: flex;
-  margin-top: 7%;
-  font-size: 1.25rem;
+  margin-top: .5em;
   font-weight: 275;
 }
 .signUp .signup-form{
   margin-left: auto;
   margin-right: auto;
+  width: 75%;
 }
 .signUp .signup-form input{
   width: 98%;
@@ -154,17 +158,18 @@ body{
 
 }
 .signUp input[type="button"]{
-  margin-top:10%;
-  height: 2rem;
+  margin-top:5%;
+  height: clamp(1rem, 2em, 5.75rem);;
   background-color: #49c1a2;
   color:white;
-  font-size: 1.2rem;
+  font-size: 1em;
   border: none;
 }
 .signUp .signUpBox p{
   text-align: center;
   padding-top: 1.75rem;
   padding-bottom: 1rem;
+  width: 85%;
 }
 /* ///////////////////// */
 /* L O G I N    C O M P O N E N T */
@@ -178,10 +183,12 @@ body{
 .loginDiv .title{
   color: #F2F2F2;
   font-family: Monsterrat, sans-serif;
-  font-size: 3.5rem;
+  font-size: ;
   text-align: center;
   margin-top: 5%;
   cursor: pointer;
+  margin-bottom: 5%;
+  font-size : clamp(2.5rem, 7.75vw, 5.75rem);
 }
 .loginDiv .leftSideBar{
   grid-column-start: 1/2;
@@ -195,17 +202,20 @@ body{
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
+  height: fit-content;
+  width: 75%;
 }
 .login-box{
   background-color: white;
   width:55%;
-  height:40%;
+  height: fit-content;
   margin-top: 10%;
   margin-left: auto;
   margin-right: auto;
   border-radius: .3em;
   display: flex;
   flex-direction: column;
+  padding-bottom: 3%;
 }
 .login-box label{
   display: flex;
@@ -229,10 +239,13 @@ body{
 }
 .login-box input[type="button"]{
   margin-top:10%;
-  height: 2rem;
+  height: fit-content;
   background-color: #49c1a2;
   color:white;
-  font-size: 1.2rem;
+  font-size : clamp(.5em, 1.5em, 5.75rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
 }
 
