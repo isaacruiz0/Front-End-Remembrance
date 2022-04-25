@@ -21,6 +21,9 @@ body{
 .welcomePage{
   background-color: #B4C6A6;
   height: 100vh;
+  display: flex;
+  flex-direction: column-reverse;
+
 }
 /* transition for fading in */
 @keyframes transitionIn {
@@ -39,20 +42,24 @@ body{
   animation: transitionIn 6s;
   color:white;
   position: absolute;
-  top: 15%;
+  top: 10%;
   padding: 0 20% 0 20%;
   font-family: Merriweather, sans-serif;
-  line-height: 1.3em;
-  font-size: 275%;
+  line-height: clamp(3.75vw, 6vw, 20rem);
+  font-size : clamp(1rem, 5vw, 2.75rem);
   width: 100%;
   text-shadow: 1.5px 1.5px rgba(33,33,33,.2);
+  height: 60%;
+
 }
 
 .accountInfo{
   color: white;
   font-family: Merriweather, sans-serif;
-  font-weight: 1;
+  font-weight: 1.5;
+  font-size : clamp(1rem, 3.75vw, 5.75rem);
   cursor: pointer;
+  
 }
 /* this will be an underline animation */
 .accountInfo::after{
@@ -75,13 +82,10 @@ body{
   animation: transitionIn 7s;
   display: flex;
   justify-content: space-between;
-  width: 60%;
-  position:absolute;
-  bottom: 20%;
-  left: 0; 
-  right: 0; 
+  width: 60%; 
   margin-left: auto; 
   margin-right: auto;
+  margin-bottom: 5vw;
 }
 /* ////////////////////////////// */
 /*S I G N     U P    C O M P O N E N T

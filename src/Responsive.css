@@ -1,0 +1,27 @@
+@media only screen and (max-width: 830px) {
+    .quote{
+        line-height: clamp(2.5rem, 8vw, 20rem);
+        font-size : clamp(1.66rem, 5vw, 2.75rem);
+        padding: 0 10% 0 10%;
+        width: 100%;
+        margin-bottom:1px ;
+    }
+    .login{
+        animation: transitionIn 7s;
+        display: flex;
+        justify-content: space-between;
+        width: 80%; 
+        margin-left: auto; 
+        margin-right: auto;
+        position: relative;
+        bottom: 15%;
+      }
+      .accountInfo{
+        color: white;
+        font-family: Merriweather, sans-serif;
+        font-weight: 1.5;
+        font-size : clamp(2rem, 4.75vw, 5.75rem);
+        cursor: pointer;
+        
+      }
+}

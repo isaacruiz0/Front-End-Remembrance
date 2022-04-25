@@ -6,6 +6,7 @@ import Dashboard from './Components/Dashboard';
 import CreatePerson from './Components/CreatePerson';
 // CSS
 import './App.css';
+import './Responsive.css'
 // Router Imports
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 
