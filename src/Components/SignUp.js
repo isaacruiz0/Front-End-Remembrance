@@ -13,7 +13,7 @@ function SignUp() {
   const signUpRequest = () =>{
     axios
       .post(
-        "http://localhost:6000/user/signup",
+        "http://localhost:5000/user/signup",
         {
           name,
           username,
@@ -25,9 +25,13 @@ function SignUp() {
           sessionStorage.setItem("accessToken", res.data.accessToken)
           sessionStorage.setItem("username", res.data.username)
           sessionStorage.setItem("name", res.data.name)
-
+          navigate("/dashboard")
+        }
+        else if(res.status === 500){
+          setError("Error creating account, please try again.")
         }
       })
+      .catch((err) => setError('Error creating account, please try again.'))
   }
 
   return (
@@ -45,7 +49,7 @@ function SignUp() {
                 <input type='text' placeholder="Enter Email" value={username} onChange = {(e) => {setUsername(e.target.value)}} />
                 <label>Password</label>
                 <input type='text' placeholder="Enter Password" value={password} onChange = {(e) => {setPassword(e.target.value)}} />
-                <input type="button" value="Submit" onCliick={signUpRequest} />
+                <input type="button" value="Submit" onClick={signUpRequest} />
               </form>
               <div className='error'>{error}</div>
             </div>

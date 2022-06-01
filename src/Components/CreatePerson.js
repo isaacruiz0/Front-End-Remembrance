@@ -53,6 +53,7 @@ function CreatePerson() {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
+      'Authorization': 'Bearer '+ sessionStorage.getItem("accessToken"),
     },
     body: JSON.stringify({
         "firstName":firstName.toString(),
@@ -60,7 +61,8 @@ function CreatePerson() {
         "birthDay":birthDay.toString(),
         "gender":gender.toString(),
         "pronouns":pronouns.toString(),
-        "relationship":relationship.toString()
+        "relationship":relationship.toString(),
+        "username": sessionStorage.getItem('username')
     })
     
   })

@@ -13,13 +13,17 @@ function Dashboard() {
     const [get, setGet] = useState(0)
     let navigate = useNavigate();
 
-    
-
     // this will do a get request from my api and return each person
     useEffect(()=>{
 
 
-        fetch(apiUrl + '/people')
+        fetch(apiUrl + '/people/', {
+            method: 'GET',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer '+ sessionStorage.getItem("accessToken"),
+            }})
         //this will fetch data from my api
         .then(res => res.json())
         //this will create an array of the people data so we can render it
@@ -44,7 +48,14 @@ function Dashboard() {
         console.log(e.target.id)
         let id = e.target.id;
         setGet(get + 1)
-        fetch(`http://localhost:5000/${id}`, {method:'DELETE'})
+        fetch(`http://localhost:5000/${id}`, {
+            method:'DELETE',
+            headers:{
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer '+ sessionStorage.getItem("accessToken"), 
+            }  
+        })
       }
 
 
@@ -52,11 +63,11 @@ function Dashboard() {
     <div className='dashboard'>
         <div className='leftSidebar'></div>
         <main>
-            <nav className='dash-nav'><h1>Who's worth remembering?</h1></nav>
+            <nav className='dash-nav'><h1>Hello {sessionStorage.getItem("name")}</h1></nav>
             <div className='div-button'>
                 <button className='addButton' onClick={()=>{navigate("/createperson")}}>Add Person +</button>
             </div>
-            {displayPeople}
+            <div className='people'>{displayPeople}</div>
         </main>
         <div className='rightSidebar'></div>
     </div>

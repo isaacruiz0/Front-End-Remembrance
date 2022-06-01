@@ -258,6 +258,7 @@ body{
   grid-template-columns: 1fr 10fr 1fr;
 
 }
+
 .dashboard .leftSidebar{
   grid-column-start: 1/2;
   background-color: #F5F5DC
@@ -284,6 +285,12 @@ body{
   text-shadow: 1.5px 1.5px rgba(33,33,33,.2);
 
 }
+.error {
+  padding-top: 15px;
+ text-align: center;
+ color: red
+}
+
 .dashboard main{
   height: auto;
   background-color: #B4C6A6;

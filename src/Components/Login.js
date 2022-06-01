@@ -13,7 +13,7 @@ const loginRequest = () =>{
   axios
     .post(
       // The link to our server
-      "http://localhost:6000/user/login",
+      "http://localhost:5000/user/login",
       // These credentials are sent to the backend login route
       {
         username,
@@ -27,7 +27,7 @@ const loginRequest = () =>{
         sessionStorage.setItem("username", res.data.username);
         sessionStorage.setItem("name", res.data.name)
         // Then we will go to the dashboard where a jwt will be sent alongside a get request
-        navigate("dashboard")
+        navigate("/dashboard")
       }
       else if( res.status === 500 ) {
         setError("Error Signing In")
