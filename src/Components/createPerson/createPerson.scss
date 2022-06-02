@@ -1,0 +1,123 @@
+.createPerson{
+    background: #FFD09E;
+    height: 100%;
+    font-family: bebas;
+    letter-spacing: 1px;
+    overflow: hidden;
+    main{
+        text-align: center;
+        height: 100%;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .person-box{
+            padding: 1rem;
+            top: 10%;
+            width: 100%;
+            .person-info-form{
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                padding: 1.75rem;
+                padding-top: 0;
+
+                justify-content: center;
+                height: 100%;
+                align-items: center;
+                box-shadow: 5px 5px 0px 0px black;
+                border: solid black 3px;
+                border-radius: 1rem;
+
+                .inputField{
+                    width: 100%;
+                    label{
+                        margin-right: auto;
+                        display: flex;
+                        margin-top: 1rem;
+                        font-size: 1.25rem;
+                    }
+                    input{
+                        width: 100%;
+                        box-shadow: 1px 1px 0px 0px black;
+                        border: solid black 3px;
+                        border-radius: .5rem;
+                        padding: .5rem;
+                    }
+                    
+                    input[type=submit]{
+                        width: 60%;
+                        margin-top: 1rem;
+                        margin-bottom: 1rem;
+
+                        box-shadow: 2px 2px 0px 0px black;
+                        border: solid black 3px;
+                        background-color: #5ed6cd;;
+                        border-radius: 1.5rem;
+                        padding: .5rem;
+                        font-size: 1rem;
+                        font-family: Montserrat;
+                        font-weight: bold;
+                        font-style: italic;
+                        width: 90%;
+
+                        cursor: pointer;
+                        &:hover{
+                            box-shadow: none;
+                            transform: translateX(5px);
+                            transform: translateY(5px);
+                        }
+                        &:active{
+                            box-shadow: none;
+                            transform: translateX(5px);
+                            transform: translateY(5px);
+                        }
+                    }
+                    .return-to-dashboard{                
+                        background-color: #E8B987;
+                        padding: .5rem;
+                        box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+                        border: solid;
+                        border-color: black;
+                        border-radius: 15px;
+                        border-width: 3px;
+                        cursor: pointer;
+
+                        font-size: 1rem;
+                        font-family: Montserrat;
+                        font-weight: bold;
+                        font-style: italic;
+                        width: 90%;
+                        text-align: center;
+                        &:hover{
+                            box-shadow: none;
+                            transform: translateX(5px);
+                            transform: translateY(5px);
+                        }
+                        &:active{
+                            box-shadow: none;
+                            transform: translateX(5px);
+                            transform: translateY(5px);
+                        }
+
+                    }
+                    span{
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 700px){
+    .createPerson{
+        main{
+            display: flex;
+            justify-content: center;
+            .person-box{
+                width: 50%;
+            }
+        }
+    }
+}
