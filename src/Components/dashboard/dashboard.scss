@@ -1,11 +1,166 @@
 .dashboard{
     font-family: Montserrat;
-    height: 100%;
+    min-height: 100vh;
     letter-spacing: 1px;
     position: relative;
+    
+    background: #FFD09E;
     .dash-nav{
         padding: 1rem;
         background-color: #E8B987;
-        font-size: 2rem;
+        font-size: 1.25rem;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media screen and (max-width: 425px){
+            padding: .75rem;
+            font-size: 1rem;
+        }
+        span{
+            border-radius: 5px;
+        }
+        .greeting{
+            font-weight: bold;
+            background-color: #FAF9F6;
+            padding: 1rem;
+            border: solid black 2px;
+            pointer-events: none;
+            @media screen and (max-width: 425px){
+                padding: .75rem;
+            }
+        }
+        .title{
+            background-color: black;
+            color: #FAF9F6;
+            padding: 1rem;
+            cursor: pointer;
+            border: solid #FAF9F6 2px;
+            @media screen and (max-width: 425px){
+                padding: .75rem;
+            }
+        }
+    }
+    main{
+        .div-button{
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            padding-bottom: 0;
+            button{
+                box-shadow: 2px 2px 0px 0px black;
+                border: solid black 3px;
+                background-color: #5ed6cd;;
+                border-radius: 1.5rem;
+                padding: .5rem;
+                font-size: 1.25rem;
+                font-family: Montserrat;
+                font-weight: bold;
+                font-style: italic;
+
+                cursor: pointer;
+                &:hover{
+                    box-shadow: none;
+                    transform: translateX(5px);
+                    transform: translateY(5px);
+                }
+                &:active{
+                    box-shadow: none;
+                    transform: translateX(5px);
+                    transform: translateY(5px);
+                }
+            }
+
+        }
+        .people{
+            font-size: .75rem;
+            padding: 1rem;
+            padding-top: 0;
+
+            display: flex;
+            flex-direction: column-reverse;
+            .peopleCards{
+                padding: .75rem;
+                margin-top: 1rem;
+                
+                background-color: #FAF9F6;
+                box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+                border: solid;
+                border-color: black;
+                border-radius: 15px;
+                border-width: 3px;
+
+                display: flex;
+                justify-content: space-between;
+                .details{
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: .75rem;
+                    .nameh1{
+                        background-color: #E8B987;
+                        width: fit-content;
+                        padding: .75rem;
+                        border: solid black 3px;
+                        border-radius: 15px;
+                    }
+                }
+                button{
+                    height: fit-content;
+                    width: fit-content;
+                    padding: .5rem;
+                    font-weight: bold;
+
+                    background-color: #EA4C46;
+                    display: block;
+                    border-radius: 50%;
+                    box-shadow: 1.5px 1.5px 0px 0px rgba(0,0,0,1);
+
+                    border: solid;
+                    border-color: black;
+                    border-width: 1.25px;
+                    &:hover{
+                        box-shadow: none;
+                        transform: translateX(1px);
+                        transform: translateY(1px);
+                    }
+                    &:active{
+                        box-shadow: none;
+                        transform: translateX(1px);
+                        transform: translateY(1px);
+                    }
+                }
+
+
+            }
+        }
+    }
+}
+@media screen and (min-width: 700px){
+    .dashboard{
+        .dash-nav{
+            display: flex;
+            justify-content: space-evenly;
+            .title{
+                cursor: pointer;
+            }
+        }
+        main{
+            .div-button{
+                button{
+                    padding: 1rem;
+                    font-size: 1.5rem;
+                }
+            }
+            .people{
+                display: flex;
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+                flex-direction: row-reverse;
+                .peopleCards{
+                    width: 45%;
+                }
+            }
+        }
     }
 }
