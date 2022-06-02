@@ -1,8 +1,9 @@
 import React from 'react'
 import{ useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import apiUrl from '../apiURL'
+import apiUrl from '../../apiURL'
 
+import './dashboard.scss'
 
 function Dashboard() {
     // this will set the displayed array to mapped data
@@ -61,15 +62,13 @@ function Dashboard() {
 
   return (
     <div className='dashboard'>
-        <div className='leftSidebar'></div>
+        <nav className='dash-nav'>Hello {sessionStorage.getItem("name")}!</nav>
         <main>
-            <nav className='dash-nav'><h1>Hello {sessionStorage.getItem("name")}</h1></nav>
             <div className='div-button'>
-                <button className='addButton' onClick={()=>{navigate("/createperson")}}>Add Person +</button>
+                <button className='addButton' onClick={()=>{navigate("/createperson")}}>+ Add Person</button>
             </div>
             <div className='people'>{displayPeople}</div>
         </main>
-        <div className='rightSidebar'></div>
     </div>
   )
 }

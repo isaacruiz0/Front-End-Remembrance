@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from "react-router-dom"
 import { useState } from 'react';
 import axios from 'axios'
+import './signup.scss'
 
 function SignUp() {
   let navigate = useNavigate();
@@ -36,25 +37,25 @@ function SignUp() {
 
   return (
     <div className='signUp'>
-        <div className='leftSideBar'></div>
+      <nav>Create Account</nav>
         <main>
-            <h1 className='title' onClick={()=>{navigate("/")}}>Remembrance</h1>
-            <div className='signUpBox'>
-              <h1 className='box-title'>Sign Up</h1>
-              <p>Lets start remembering the little things</p>
+            <div className='signupBox'>
               <form className='signup-form'>
-                <label>First Name</label>
-                <input type='text' placeholder="Enter Name" value={name} onChange = {(e) => {setName(e.target.value)}} />
-                <label>Email</label>
-                <input type='text' placeholder="Enter Email" value={username} onChange = {(e) => {setUsername(e.target.value)}} />
-                <label>Password</label>
-                <input type='text' placeholder="Enter Password" value={password} onChange = {(e) => {setPassword(e.target.value)}} />
-                <input type="button" value="Submit" onClick={signUpRequest} />
+                <h1 className='title' onClick={()=>{navigate("/")}}><span>Welcome to</span><br/> Remembrance</h1>
+                <div className="inputField">
+                  <label>First Name</label>
+                  <input type='Name' placeholder="Enter Name" value={name} onChange = {(e) => {setName(e.target.value)}} />
+                  <label>Email</label>
+                  <input type='Email' placeholder="Enter Email" value={username} onChange = {(e) => {setUsername(e.target.value)}} />
+                  <label>Password</label>
+                  <input type='Password' placeholder="Enter Password" value={password} onChange = {(e) => {setPassword(e.target.value)}} />
+                  <input type="button" value="Submit" onClick={signUpRequest} /><br/>
+                  <span onClick={()=>{navigate("/login")}}>Already have an account?</span>
+                </div>
               </form>
               <div className='error'>{error}</div>
             </div>
         </main>
-        <div className='rightSideBar'></div>
     </div>
   )
 }

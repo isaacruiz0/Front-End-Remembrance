@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom"
 import axios from 'axios'
 import { useState } from 'react';
 
+import './login.scss'
+
 function Login() {
 let navigate = useNavigate();
 const [username, setUsername] = useState("")
@@ -39,23 +41,25 @@ const loginRequest = () =>{
 
   return (
     <div className='loginDiv'>
-        <div className='leftSideBar'></div>
+      <nav>Login</nav>
         <main>
-            <h1 className='title' onClick={()=>{navigate("/")}}>Remembrance</h1>
-            <div className='login-box'>
-              <h1 className='box-title'>Login</h1>
-              <form className='login-form'>
+          <div className='login-box'>
+            <form className='login-form'>
+              <h1 className='title' onClick={()=>{navigate("/")}}>Remembrance</h1>
+              <div className="inputField">
                 <label>Email</label>
-                <input type='text' placeholder="Enter Email" value={username} onChange={(e) => setUsername(e.target.value)}/>
+                <input type='Email' placeholder="Enter Email" value={username} onChange={(e) => setUsername(e.target.value)}/>
                 <label>Password</label>
-                <input type='text' placeholder="Enter Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                <input type='Password' placeholder="Enter Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 <input type="button" value="Submit" onClick={loginRequest}/>
-              </form>
-              {/* This will pop up if the user failed to log in */}
-              <div className='error'>{error}</div>
-            </div>
+                <br/>
+                <span onClick={()=>{navigate("/signup")}}>Don't have an account?</span>
+              </div>
+            </form>
+            {/* This will pop up if the user failed to log in */}
+            <div className='error'>{error}</div>
+          </div>
         </main>
-        <div className='rightSideBar'></div>
     </div>
   )
 }

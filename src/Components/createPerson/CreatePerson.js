@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom"
-import apiUrl from '../apiURL'
+import apiUrl from '../../apiURL'
 
 function CreatePerson() {
     // I am going to need to do a post request and within that i will have use states that are correlated with the user's input

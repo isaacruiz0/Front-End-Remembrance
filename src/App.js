@@ -1,12 +1,11 @@
 // COMPONENTS
-import WelcomePage from './Components/WelcomePage';
-import SignUp from './Components/SignUp';
-import Login from './Components/Login';
-import Dashboard from './Components/Dashboard';
-import CreatePerson from './Components/CreatePerson';
+import WelcomePage from './Components/welcomePage/WelcomePage';
+import SignUp from './Components/signup/SignUp';
+import Login from './Components/login/Login';
+import Dashboard from './Components/dashboard/Dashboard';
+import CreatePerson from './Components/createPerson/CreatePerson';
 // CSS
 import './App.css';
-import './Responsive.css'
 // Router Imports
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 
