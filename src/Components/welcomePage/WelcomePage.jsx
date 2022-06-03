@@ -19,7 +19,7 @@ function WelcomePage() {
         </nav>
         <main>
           <h2 className='quote'>
-          "To develop real friendships, be genuinely interested in others." – Dale Carnegie.
+            Genuine relationships require a genuine interest
           </h2>
 
           <div className="icon">
