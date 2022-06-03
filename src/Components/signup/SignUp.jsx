@@ -14,7 +14,7 @@ function SignUp() {
   const signUpRequest = () =>{
     axios
       .post(
-        "http://localhost:5000/user/signup",
+        "https://damp-dawn-48917.herokuapp.com/user/signup",
         {
           name,
           username,

@@ -118,6 +118,8 @@
                     border: solid;
                     border-color: black;
                     border-width: 1.25px;
+
+                    cursor: pointer;
                     &:hover{
                         box-shadow: none;
                         transform: translateX(1px);

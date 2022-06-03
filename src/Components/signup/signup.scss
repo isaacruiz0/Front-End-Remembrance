@@ -77,8 +77,7 @@
                         font-style: italic;
 
                         cursor: pointer;
-                        &:hover{
-                            box-shadow: none;
+                        &:hover{ box-shadow: none;
                             transform: translateX(5px);
                             transform: translateY(5px);
                         }

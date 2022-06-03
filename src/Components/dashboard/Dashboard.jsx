@@ -1,7 +1,6 @@
 import React from 'react'
 import{ useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import apiUrl from '../../apiURL'
 
 import './dashboard.scss'
 
@@ -18,7 +17,7 @@ function Dashboard() {
     useEffect(()=>{
 
 
-        fetch(apiUrl + '/people/', {
+        fetch('https://damp-dawn-48917.herokuapp.com/people/', {
             method: 'GET',
             headers: {
               'Accept': 'application/json',
@@ -51,7 +50,7 @@ function Dashboard() {
         console.log(e.target.id)
         let id = e.target.id;
         setGet(get + 1)
-        fetch(`http://localhost:5000/${id}`, {
+        fetch(`https://damp-dawn-48917.herokuapp.com/${id}`, {
             method:'DELETE',
             headers:{
                 'Accept': 'application/json',

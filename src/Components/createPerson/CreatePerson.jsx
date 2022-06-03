@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom"
-import apiUrl from '../../apiURL'
 
 import './createPerson.scss'
 
@@ -50,7 +49,7 @@ function CreatePerson() {
     // SUBMIT
     const handleSubmit = (event) => {
         event.preventDefault();
-        fetch(apiUrl + '/createperson', {
+        fetch('https://damp-dawn-48917.herokuapp.com/createperson', {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
@@ -67,13 +66,15 @@ function CreatePerson() {
         "username": sessionStorage.getItem('username')
     })
     
+  }).then(() => {
+    setFirstName("");
+    setLastName("");
+    setBirthday("");
+    setGender("");
+    setPronouns("");
+    setRelationship("");
   })
-  setFirstName("");
-  setLastName("");
-  setBirthday("");
-  setGender("");
-  setPronouns("");
-  setRelationship("");
+
       }
 
 
@@ -86,15 +87,35 @@ function CreatePerson() {
                     <label>First Name </label>
                     <input type='text' placeholder="" onChange={firstHandleChange} value={firstName}/>
                     <label>Last Name </label>
-                    <input type='text' placeholder="" onChange={lastHandleChange} value={lastName}/>
+                    <input 
+                        type='text'
+                        placeholder="" 
+                        onChange={lastHandleChange} 
+                        value={lastName}/>
                     <label>Birthday </label>
-                    <input type='text' placeholder="" onChange={birthdayHandle} value={birthDay}/>
-                    <label>Gender </label>
-                    <input type='text' placeholder="" onChange={genderHandle} value={gender}/>
+                    <input 
+                        type='text' 
+                        placeholder="" 
+                        onChange={birthdayHandle} 
+                        value={birthDay}/>
+                        <label>Gender </label>
+                    <input 
+                        type='text' 
+                        placeholder=""
+                        onChange={genderHandle} 
+                        value={gender}/>
                     <label>Pronouns </label>
-                    <input type='text' placeholder="" onChange={pronounsHandle} value={pronouns}/>
+                    <input 
+                        type='text' 
+                        placeholder="" 
+                        onChange={pronounsHandle} 
+                        value={pronouns}/>
                     <label>Relationship </label>
-                    <input type='text' placeholder="" onChange={relationshipHandle} value={relationship}/>
+                    <input 
+                        type='text' 
+                        placeholder="" 
+                        onChange={relationshipHandle} 
+                        value={relationship}/>
                     <input type="submit" value="Submit" />
                     <div className='return-div'>
                     <button className='return-to-dashboard' onClick={()=>navigate('/dashboard')}> Return to Dashboard</button>
