@@ -1,10 +1,13 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom"
 
 import './createPerson.scss'
 
 function CreatePerson() {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
     // I am going to need to do a post request and within that i will have use states that are correlated with the user's input
     // these two usestates will handle the change of user input
     const [firstName, setFirstName] = useState('')

@@ -1,10 +1,15 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios'
 import './signup.scss'
 
 function SignUp() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   let navigate = useNavigate();
   const [name, setName] = useState("")
   const [username, setUsername] = useState("")

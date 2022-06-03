@@ -16,6 +16,7 @@ function Dashboard() {
     // this will do a get request from my api and return each person
     useEffect(()=>{
 
+            window.scrollTo(0, 0)
 
         fetch('https://damp-dawn-48917.herokuapp.com/people/', {
             method: 'GET',
