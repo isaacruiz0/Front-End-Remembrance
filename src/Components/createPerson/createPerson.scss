@@ -61,6 +61,8 @@
                         font-style: italic;
                         width: 90%;
 
+                        color: black;
+
                         cursor: pointer;
                         &:hover{
                             box-shadow: none;
@@ -83,6 +85,7 @@
                         border-width: 3px;
                         cursor: pointer;
 
+                        color: black;
                         font-size: 1rem;
                         font-family: Montserrat;
                         font-weight: bold;
