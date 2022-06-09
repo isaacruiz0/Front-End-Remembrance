@@ -1,6 +1,6 @@
 # Remembrance Front End
 
-This is the front end of Remembrance that successfully connects to the backend of this web application.
+This is the front end of Remembrance that successfully connects to the back end of this web application.
 
 ## Description
 
