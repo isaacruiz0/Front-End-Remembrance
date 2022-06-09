@@ -8,7 +8,7 @@ This app is for those who want to be the best partner they could be, whether tha
 
 ## Deployed Link
 
-[Remembrance](https://inquisitive-sorbet-a52729.netlify.app/)
+[Remembrance Front End](https://inquisitive-sorbet-a52729.netlify.app/)
 
 ## Author
 Isaac Ruiz
