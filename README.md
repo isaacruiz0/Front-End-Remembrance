@@ -12,14 +12,16 @@ This app is for those who want to be the best partner they could be, whether tha
 
 ## Author
 Isaac Ruiz
-Contact - isaac.ruiz.us@gmail.com
-Portfolio - https://isaac-ruiz.com/
+### Contact 
+isaac.ruiz.us@gmail.com
+### Portfolio 
+https://isaac-ruiz.com/
 
-### Back End Repository
+## Back End Repository
 https://github.com/isaacruiz0/Back-End-Remembrance
 
-### Frameworks
+## Frameworks
 React | SCSS
 
-### Languages
+## Languages
 JavaScript | HTML | CSS
