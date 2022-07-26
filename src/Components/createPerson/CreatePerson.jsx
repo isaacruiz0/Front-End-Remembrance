@@ -16,6 +16,7 @@ function CreatePerson() {
     const [relationship, setRelationship] = useState('')
     const [gender, setGender] = useState('')
     const [pronouns, setPronouns] = useState('')
+    const [opacitySpan, setOpacitySpan] = useState(false)
 
     const navigate = useNavigate()
 
@@ -51,6 +52,9 @@ function CreatePerson() {
     }
     // SUBMIT
     const handleSubmit = (event) => {
+        setOpacitySpan(true);
+        setTimeout(()=>{setOpacitySpan(false)}, 1750);
+
         event.preventDefault();
         fetch('https://damp-dawn-48917.herokuapp.com/createperson', {
     method: 'POST',
@@ -76,15 +80,21 @@ function CreatePerson() {
     setGender("");
     setPronouns("");
     setRelationship("");
+
   })
 
-      }
+}
+
+
+
 
 
   return (
     <div className='createPerson'>
+        <span style={opacitySpan ? {opacity: '1'} : {opacity: '0'}}>Card Created!</span>
         <main>
             <div className='person-box'>
+            <header><h1>Create Card</h1></header>
               <form className='person-info-form' onSubmit={handleSubmit}>
                 <div className="inputField">
                     <label>First Name </label>
@@ -119,7 +129,7 @@ function CreatePerson() {
                         placeholder="" 
                         onChange={relationshipHandle} 
                         value={relationship}/>
-                    <input type="submit" value="Submit" />
+                    <input type="submit" value="Submit"/>
                     <div className='return-div'>
                     <button className='return-to-dashboard' onClick={()=>navigate('/dashboard')}> Return to Dashboard</button>
                     </div>
