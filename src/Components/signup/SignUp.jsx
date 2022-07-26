@@ -16,28 +16,31 @@ function SignUp() {
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
   
-  const signUpRequest = () =>{
-    axios
-      .post(
-        "https://damp-dawn-48917.herokuapp.com/user/signup",
-        {
-          name,
-          username,
-          password
-        }
-      )
-      .then((res) =>{
-        if (res.status === 200){
-          sessionStorage.setItem("accessToken", res.data.accessToken)
-          sessionStorage.setItem("username", res.data.username)
-          sessionStorage.setItem("name", res.data.name)
+  const signUpRequest = async (e) =>{
+    e.preventDefault();
+      try {
+        let response = await axios.post('https://damp-dawn-48917.herokuapp.com/user/signup',{
+            name,
+            username,
+            password
+        })
+        console.log(response)
+        if (response.status === 200) {
+          sessionStorage.setItem("accessToken", response.data.accessToken)
+          sessionStorage.setItem("username", response.data.username)
+          sessionStorage.setItem("name", response.data.name)
           navigate("/dashboard")
         }
-        else if(res.status === 500){
-          setError("Error creating account, please try again.")
+        else if(response.status === 500){
+          setError("Error creating account, please try again later")
+          console.log(response)
         }
-      })
-      .catch((err) => setError('Error creating account, please try again.'))
+    }
+    catch (err) {
+      console.log(err)
+      setError("Error creating account, please try again later")
+    }
+    
   }
 
   return (
