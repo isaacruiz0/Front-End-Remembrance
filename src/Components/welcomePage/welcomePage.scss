@@ -5,6 +5,7 @@
         font-family: bebas;
         letter-spacing: 1px;
         position: relative;
+        
 
         .navBar{
             display: flex;
@@ -71,6 +72,7 @@
             }
             @media screen and (max-width: 850px){
                 font-size: 2rem;
+                
             }
             }
             .icon{
@@ -95,6 +97,7 @@
             display: flex;
             justify-content: center;
             width: 100%;
+            z-index: 2;
             @media screen and (max-width: 1200px){
                 bottom: 10%;
             }
@@ -140,6 +143,9 @@
         background-image: url(./blob.svg);
         background-repeat: no-repeat;
         background-size: cover;
+        svg{
+            display: none;
+        }
         .navBar{
             display: flex;
             justify-content: center;
