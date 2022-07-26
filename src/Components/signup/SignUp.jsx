@@ -17,7 +17,7 @@ function SignUp() {
   const [error, setError] = useState("")
   
   const signUpRequest = async (e) =>{
-    e.preventDefault();
+      e.preventDefault();
       try {
         let response = await axios.post('https://damp-dawn-48917.herokuapp.com/user/signup',{
             name,
@@ -31,7 +31,7 @@ function SignUp() {
           sessionStorage.setItem("name", response.data.name)
           navigate("/dashboard")
         }
-        else if(response.status === 500){
+        else if (response.status === 500){
           setError("Error creating account, please try again later")
           console.log(response)
         }

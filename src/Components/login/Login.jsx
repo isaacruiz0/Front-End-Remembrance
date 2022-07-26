@@ -16,30 +16,31 @@ const [username, setUsername] = useState("")
 const [password, setPassword] = useState("")
 const [error, setError] = useState("")
 
-const loginRequest = () =>{
-  axios
-    .post(
-      // The link to our server
-      "https://damp-dawn-48917.herokuapp.com/user/login",
-      // These credentials are sent to the backend login route
-      {
+const loginRequest = async (e) =>{
+  e.preventDefault();
+  try{
+    // The link to our server
+    // These credentials are sent to the backend login route
+    let response = await axios.post("https://damp-dawn-48917.herokuapp.com/user/login",{
         username,
         password
-      }
-    )
+      })
     // The server will respond with an accessToken, the user's username and the name of the user
-    .then((res) =>{
-      if ( res.status === 200 ){
-        sessionStorage.setItem("accessToken", res.data.accessToken);
-        sessionStorage.setItem("username", res.data.username);
-        sessionStorage.setItem("name", res.data.name)
-        // Then we will go to the dashboard where a jwt will be sent alongside a get request
-        navigate("/dashboard")
-      }
-      else if( res.status === 500 ) {
-        setError("Error Signing In")
-      }
-    })
+
+    if (response.status === 200){
+      sessionStorage.setItem('accessToken', response.data.accessToken);
+      sessionStorage.setItem("username", response.data.username);
+      sessionStorage.setItem("name", response.data.name)
+      navigate("/dashboard")
+    }
+    else if (response.status === 500) {
+      setError("Error signing in, please try again later")
+    }
+  }
+  catch(err){
+   console.log(err)
+   setError("Error signing in, please try again later")
+  }
 
 }
 
