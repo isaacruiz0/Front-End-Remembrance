@@ -5,42 +5,44 @@
     position: relative;
     
     background: #FFD09E;
-    .dash-nav{
+    z-index: 10000;
+    .topSvg{
+        z-index: -100000;
+    }
+    span{
+        border-radius: 5px;
+    }
+    .greeting{
+        font-weight: bold;
+        background-color: transparent;
+        border: none;
+        font-size: 2.5rem;
+        font-family: Montserrat;
+        margin-left: 4rem;
+        margin-top: 2rem;
+        cursor: pointer;
+        user-select: none;
+        z-index: 600000;
+        border-radius: 10px;
+        background-color: #FFD09E;
+        box-shadow: 2px 2px 0px 0px black;
         padding: 1rem;
-        background-color: #E8B987;
-        font-size: 1.25rem;
+        border: solid black 3px;
+        cursor: pointer;
+        &:hover{
+            box-shadow: none;
+            transform: translateX(5px);
+            transform: translateY(5px);
+        }
 
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+
+
         @media screen and (max-width: 425px){
-            padding: .75rem;
-            font-size: 1rem;
-        }
-        span{
-            border-radius: 5px;
-        }
-        .greeting{
-            font-weight: bold;
-            background-color: #FAF9F6;
             padding: 1rem;
-            border: solid black 2px;
-            pointer-events: none;
-            @media screen and (max-width: 425px){
-                padding: .75rem;
-            }
-        }
-        .title{
-            background-color: black;
-            color: #FAF9F6;
-            padding: 1rem;
-            cursor: pointer;
-            border: solid #FAF9F6 2px;
-            @media screen and (max-width: 425px){
-                padding: .75rem;
-            }
+            font-size: 2rem;
         }
     }
+    
     main{
         .div-button{
             display: flex;
