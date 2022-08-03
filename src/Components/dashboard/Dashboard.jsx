@@ -31,7 +31,7 @@ function Dashboard() {
         .then(res => res.json())
         //this will create an array of the people data so we can render it
         .then(data => {let peopleArray = data.people.map((person, index)=>{
-            console.log(person._id)
+            let personId = person._id
             return(
                 <div className='peopleCards'  key={index}>
                     <div className="details">
@@ -45,7 +45,7 @@ function Dashboard() {
                         <button onClick={handleDelete} id={person._id}>
                             <FontAwesomeIcon icon={faCircleXmark} className='deleteIcon'/>
                         </button>
-                        <button onClick={()=>{navigate("/addDetailst")}}> 
+                        <button onClick={()=>{navigate("/addDetails",{state:{id: personId}})}}> 
                             <FontAwesomeIcon icon={faCircleXmark} className='addDetails' />
                         </button>
                     </div>

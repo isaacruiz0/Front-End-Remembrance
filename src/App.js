@@ -4,7 +4,7 @@ import SignUp from './Components/signup/SignUp';
 import Login from './Components/login/Login';
 import Dashboard from './Components/dashboard/Dashboard';
 import CreatePerson from './Components/createPerson/CreatePerson';
-import AddDetails from './Components/addDetails/AddDetails'
+import AddDetails from './Components/addDetails/AddDetails';
 // CSS
 import './App.css';
 // Router Imports
