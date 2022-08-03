@@ -38,12 +38,6 @@
                 font-size: 1.5rem;
                 width: fit-content;
                 text-align: center;
-
-                &:hover{
-                    box-shadow: none;
-                    transform: translateX(5px);
-                    transform: translateY(5px);
-                }
                 &:active{
                     box-shadow: none;
                     transform: translateX(5px);
@@ -113,11 +107,6 @@
                 border-radius: 15px;
                 border-width: 3px;
                 cursor: pointer;
-                &:hover{
-                    box-shadow: none;
-                    transform: translateX(5px);
-                    transform: translateY(5px);
-                }
                 &:active{
                     box-shadow: none;
                     transform: translateX(5px);
@@ -249,11 +238,7 @@
                 font-size: 1.5rem;
                 width: 90%;
                 text-align: center;
-                &:hover{
-                    box-shadow: none;
-                    transform: translateX(5px);
-                    transform: translateY(5px);
-                }
+
                 &:active{
                     box-shadow: none;
                     transform: translateX(5px);

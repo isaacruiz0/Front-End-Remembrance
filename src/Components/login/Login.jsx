@@ -28,9 +28,9 @@ const loginRequest = async (e) =>{
     // The server will respond with an accessToken, the user's username and the name of the user
 
     if (response.status === 200){
-      sessionStorage.setItem('accessToken', response.data.accessToken);
-      sessionStorage.setItem("username", response.data.username);
-      sessionStorage.setItem("name", response.data.name)
+      await sessionStorage.setItem('accessToken', response.data.accessToken);
+      await sessionStorage.setItem("username", response.data.username);
+      await sessionStorage.setItem("name", response.data.name)
       navigate("/dashboard")
     }
     else if (response.status === 500) {

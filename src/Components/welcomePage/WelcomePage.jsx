@@ -13,8 +13,8 @@ function WelcomePage() {
         
         <nav className='navBar'>
             <h1 className='title'>Remembrance</h1>
-            <div className="register">
-              <h1 className='login'onClick={()=>{navigate("/login")}}>Login</h1>
+            <div className="register" onClick={()=>{navigate("/login")}}>
+              <h1 className='login'>Login</h1>
             </div>
         </nav>
         <main>

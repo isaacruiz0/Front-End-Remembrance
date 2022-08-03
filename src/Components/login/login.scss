@@ -84,11 +84,6 @@
                         color: black;
 
                         cursor: pointer;
-                        &:hover{
-                            box-shadow: none;
-                            transform: translateX(5px);
-                            transform: translateY(5px);
-                        }
                         &:active{
                             box-shadow: none;
                             transform: translateX(5px);

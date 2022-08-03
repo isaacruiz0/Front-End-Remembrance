@@ -53,7 +53,7 @@ function CreatePerson() {
     // SUBMIT
     const handleSubmit = (event) => {
         setOpacitySpan(true);
-        setTimeout(()=>{setOpacitySpan(false)}, 1750);
+        setTimeout(()=>{setOpacitySpan(false)}, 1500);
 
         event.preventDefault();
         fetch('https://damp-dawn-48917.herokuapp.com/createperson', {

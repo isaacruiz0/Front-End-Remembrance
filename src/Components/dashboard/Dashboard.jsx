@@ -1,6 +1,8 @@
 import React from 'react'
 import{ useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 
 import './dashboard.scss'
 
@@ -16,7 +18,7 @@ function Dashboard() {
     // this will do a get request from my api and return each person
     useEffect(()=>{
 
-            window.scrollTo(0, 0)
+        window.scrollTo(0, 0)
 
         fetch('https://damp-dawn-48917.herokuapp.com/people/', {
             method: 'GET',
@@ -31,7 +33,7 @@ function Dashboard() {
         .then(data => {let peopleArray = data.people.map((person, index)=>{
             console.log(person._id)
             return(
-                <div className='peopleCards' onClick={handleDelete} key={index}>
+                <div className='peopleCards'  key={index}>
                     <div className="details">
                         <h1 className='nameh1'>{person.firstName} {person.lastName}</h1>
                         <h2>Birthday: {person.birthDay}</h2>
@@ -39,7 +41,14 @@ function Dashboard() {
                         <h2>Pronouns: {person.pronouns}</h2>
                         <h2>Relationship: {person.relationship}</h2>
                     </div>
-                    <button id={person._id}>X</button>
+                    <div className="buttonsContainer">
+                        <button onClick={handleDelete} id={person._id}>
+                            <FontAwesomeIcon icon={faCircleXmark} className='deleteIcon'/>
+                        </button>
+                        <button onClick={()=>{navigate("/addDetailst")}}> 
+                            <FontAwesomeIcon icon={faCircleXmark} className='addDetails' />
+                        </button>
+                    </div>
                 </div>
             )
         })
@@ -47,11 +56,10 @@ function Dashboard() {
     })
     }, [get])
 
-    const handleDelete = (e) =>{
+    const handleDelete = async (e) =>{
         console.log(e.target.id)
         let id = e.target.id;
-        setGet(get + 1)
-        fetch(`https://damp-dawn-48917.herokuapp.com/${id}`, {
+        await fetch(`https://damp-dawn-48917.herokuapp.com/${id}`, {
             method:'DELETE',
             headers:{
                 'Accept': 'application/json',
@@ -59,6 +67,7 @@ function Dashboard() {
                 'Authorization': 'Bearer '+ sessionStorage.getItem("accessToken"), 
             }  
         })
+        setGet(get + 1)
       }
 
 
