@@ -24,7 +24,7 @@ function AddDetails() {
         log(personId)
         try{
             // This returns the person of the id that was passed by the useNavigate hook on the card 
-            const response = await axios.get(`https://damp-dawn-48917.herokuapp.com/people/${personId}/`)
+            const response = await axios.get(`https://damp-dawn-48917.herokuapp.com/people/${personId}`)
             const details = await response.data
             setDisplayDetails(details)
             let extraDetailsArray = response.data.extraDetails.map((trait, index) => {
