@@ -24,22 +24,22 @@ function AddDetails() {
         log(personId)
         try{
             // This returns the person of the id that was passed by the useNavigate hook on the card 
-            const response = await axios.get(`http://localhost:5000/people/${personId}/`)
+            const response = await axios.get(`https://damp-dawn-48917.herokuapp.com/people/${personId}/`)
             const details = await response.data
             setDisplayDetails(details)
-            let extraDetailsArray = response.data.extraDetails.map((trait) => {
-                return(<h2><span>{trait.key}</span>{trait.value}</h2>)
+            let extraDetailsArray = response.data.extraDetails.map((trait, index) => {
+                return(<h2 key={index}><span>{trait.key}</span>{trait.value}</h2>)
             })
             setDisplayExtra(extraDetailsArray)
         } catch(err) {
             console.log(err)
         }
     }
-
+    // This function will add a specific trait to a person and it will call the getPerson() function to display the newly added trait
     const handleSubmit = async (e) =>{
         e.preventDefault()             
         const fieldTrait = {extraDetails: [{key: inputField.toString(), value: inputTrait.toString()}]}
-        const response = await axios.put(`http://localhost:5000/people/${personId}`, fieldTrait)
+        const response = await axios.put(`https://damp-dawn-48917.herokuapp.com/people/${personId}`, fieldTrait)
         log(response)
 
         setInputField('')
