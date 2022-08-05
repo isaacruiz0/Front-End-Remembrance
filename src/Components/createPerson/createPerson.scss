@@ -18,7 +18,7 @@
         z-index: 1000;
         pointer-events: none;
         user-select: none;
-        transition: opacity .5s ease-in-out;
+        transition: opacity .25s ease-in-out;
         @media screen and (max-width: 900px){
             font-size: 1.5rem;
             padding: .5rem;
@@ -87,7 +87,7 @@
 
                         box-shadow: 2px 2px 0px 0px black;
                         border: solid black 3px;
-                        background-color: #5ed6cd;;
+                        background-color: #5ed6cd;
                         border-radius: 1.5rem;
                         padding: .5rem;
                         font-size: 1rem;
