@@ -16,10 +16,7 @@ function Dashboard() {
     let navigate = useNavigate();
 
     // this will do a get request from my api and return each person
-    useEffect(()=>{
-
-        window.scrollTo(0, 0)
-
+    const getPeople =() =>{
         fetch('https://damp-dawn-48917.herokuapp.com/people/', {
             method: 'GET',
             headers: {
@@ -56,8 +53,14 @@ function Dashboard() {
             )
         })
         setDisplayPeople(peopleArray)
-    })
-    }, [get])
+        })
+    }
+    useEffect(()=>{
+
+        window.scrollTo(0, 0)
+
+        getPeople()
+    }, [])
 
     const handleDelete = async (e) =>{
         console.log(e.target.id)
@@ -70,7 +73,7 @@ function Dashboard() {
                 'Authorization': 'Bearer '+ sessionStorage.getItem("accessToken"), 
             }  
         })
-        setGet(get + 1)
+        getPeople()
       }
 
 
