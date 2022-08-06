@@ -19,7 +19,7 @@ function WelcomePage() {
         </nav>
         <main>
           <h2 className='quote'>
-            A genuine relationship requires a genuine interest
+            Genuine relationships require a  genuine interest
           </h2>
 
           <div className="icon">
