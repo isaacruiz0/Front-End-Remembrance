@@ -42,7 +42,7 @@ function AddDetails() {
             headers: {'Authorization': 'Bearer '+ sessionStorage.getItem("accessToken")}
         }
         const fieldTrait = {extraDetails: [{key: inputField.toString(), value: inputTrait.toString()}]}
-        const response = await axios.put(`http://localhost:5000/people/${personId}`, fieldTrait, authBearer)
+        const response = await axios.put(`https://damp-dawn-48917.herokuapp.com/people/${personId}`, fieldTrait, authBearer)
         log(response)
 
         setInputField('')
