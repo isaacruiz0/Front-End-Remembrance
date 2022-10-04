@@ -112,6 +112,13 @@
             justify-content: center;
             .login-box{
                 width: 50%;
+                .login-form{
+                    .inputField{
+                        input[type=button]{
+                            padding: .85rem;
+                        }
+                    }
+                }
             }
         }
     }
