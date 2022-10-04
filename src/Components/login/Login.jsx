@@ -2,6 +2,8 @@ import React from 'react'
 import { useNavigate } from "react-router-dom"
 import axios from 'axios'
 import { useState, useEffect } from 'react';
+import SyncLoader from "react-spinners/SyncLoader";
+
 
 import './login.scss'
 
@@ -15,10 +17,16 @@ let navigate = useNavigate();
 const [username, setUsername] = useState("")
 const [password, setPassword] = useState("")
 const [error, setError] = useState("")
+// Sets loading to false so it doesn't display
+const [loading, setLoading] = useState(false)
+// If false then the submit button will be display none
+const [displaySubmit, setDisplaySubmit] = useState(true)
 
 const loginRequest = async (e) =>{
   e.preventDefault();
   try{
+    setDisplaySubmit(false)
+    setLoading(true)
     // The link to our server
     // These credentials are sent to the backend login route
     let response = await axios.post("https://damp-dawn-48917.herokuapp.com/user/login",{
@@ -59,7 +67,16 @@ const loginRequest = async (e) =>{
                 <input type='Email' placeholder="Enter Email" value={username} onChange={(e) => setUsername(e.target.value)}/>
                 <label>Password</label>
                 <input type='Password' placeholder="Enter Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                <input type="button" value="Submit" onClick={loginRequest}/>
+                <SyncLoader 
+                  color="#E8B987" 
+                  speedMultiplier={1.25}
+                  cssOverride={{
+                    'margin': '30px 0 20px'
+                  }}
+                  loading = {loading} 
+                  size={20} />
+                <input type="button" value="Login" onClick={loginRequest} style={{display:displaySubmit ? "block" : "none"}}/>
+   
                 <br/>
                 <span onClick={()=>{navigate("/signup")}}>Don't have an account?</span>
               </div>
