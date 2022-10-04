@@ -43,11 +43,15 @@ const loginRequest = async (e) =>{
     }
     else if (response.status === 500) {
       setError("Error signing in, please try again later")
+      setLoading(false)
+      setDisplaySubmit(true)
     }
   }
   catch(err){
-   console.log(err)
-   setError("Error signing in, please try again later")
+    console.log(err)
+    setError("Error signing in, please try again later")
+    setLoading(false)
+    setDisplaySubmit(true)
   }
 
 }
