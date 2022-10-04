@@ -55,6 +55,10 @@
 
                 .inputField{
                     width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
                     label{
                         margin-right: auto;
                         display: flex;
@@ -63,10 +67,12 @@
                     }
                     input{
                         width: 100%;
+                        margin-top: .5rem;
                         box-shadow: 1px 1px 0px 0px black;
                         border: solid black 3px;
                         border-radius: .5rem;
                         padding: .5rem;
+                        font-size: 1.5rem;
                     }
                     
                     input[type=button]{
@@ -78,8 +84,8 @@
                         border: solid black 3px;
                         background-color: #5ed6cd;;
                         border-radius: 1.5rem;
-                        padding: .5rem;
-                        font-size: 1rem;
+                        padding: 1.25rem;
+                        font-size: 1.5rem;
                         font-family: Montserrat;
                         font-weight: bold;
                         font-style: italic;

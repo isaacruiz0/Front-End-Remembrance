@@ -14,6 +14,7 @@ function AddDetails() {
     const [inputTrait, setInputTrait] = useState('')
     // This is to display the extra details
     const [displayExtra, setDisplayExtra] = useState('')
+    
 
     const log = console.log
     // This idea was passed down from the person we clicked on 

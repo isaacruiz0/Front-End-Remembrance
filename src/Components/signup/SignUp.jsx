@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from 'react';
 import axios from 'axios'
 import './signup.scss'
+import SyncLoader from "react-spinners/SyncLoader";
 
 function SignUp() {
 
@@ -16,9 +17,16 @@ function SignUp() {
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
   
+  // Sets loading to false so it doesn't display
+  const [loading, setLoading] = useState(false)
+  // If false then the submit button will be display none
+  const [displaySubmit, setDisplaySubmit] = useState(true)
+  
   const signUpRequest = async (e) =>{
       e.preventDefault();
       try {
+        setDisplaySubmit(false)
+        setLoading(true)
         let response = await axios.post('https://damp-dawn-48917.herokuapp.com/user/signup',{
             name,
             username,
@@ -34,11 +42,15 @@ function SignUp() {
         else if (response.status === 500){
           setError("Error creating account, please try again later")
           console.log(response)
+          setLoading(false)
+          setDisplaySubmit(true)
         }
     }
     catch (err) {
       console.log(err)
       setError("Error creating account, please try again later")
+      setLoading(false)
+      setDisplaySubmit(true)
     }
     
   }
@@ -58,7 +70,15 @@ function SignUp() {
                   <input type='Email' placeholder="Enter Email" value={username} onChange = {(e) => {setUsername(e.target.value)}} />
                   <label>Password</label>
                   <input type='Password' placeholder="Enter Password" value={password} onChange = {(e) => {setPassword(e.target.value)}} />
-                  <input type="button" value="Submit" onClick={signUpRequest} /><br/>
+                  <SyncLoader 
+                  color="#E8B987" 
+                  speedMultiplier={1.25}
+                  cssOverride={{
+                    'margin': '30px 0 20px'
+                  }}
+                  loading = {loading} 
+                  size={20} />
+                  <input type="button" value="Submit" onClick={signUpRequest} style={{display:displaySubmit ? "block" : "none"}} /><br/>
                   <span onClick={()=>{navigate("/login")}}>Already have an account?</span>
                 </div>
               </form>
