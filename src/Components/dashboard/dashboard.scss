@@ -1,3 +1,14 @@
+::-webkit-scrollbar {
+    width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+    background: transparent; 
+    }
+    ::-webkit-scrollbar-thumb {
+    background: #E8B987; 
+    border-radius:50px;
+    }
+
 .dashboard{
     font-family: Montserrat;
     min-height: 100vh;
@@ -102,12 +113,14 @@
 
                 }
                 .details{
+     
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
                     row-gap: 1.25rem;
                     width: 100%;
-
+                    height: 85%;
+                    overflow: scroll;
                     .nameh1{
                         background-color: #E8B987;
                         width: fit-content;
