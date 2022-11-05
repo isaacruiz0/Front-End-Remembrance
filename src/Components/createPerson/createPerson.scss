@@ -4,10 +4,10 @@
     font-family: bebas;
     letter-spacing: 1px;
     overflow: auto;
+    padding: 0;
 
     span{
         background-color: #E8B987;
-        padding: 1rem;
         position: absolute;
         left: 50%;
         top: 60%;
@@ -33,11 +33,7 @@
         flex-direction: column;
 
         .person-box{
-            padding: 7.5%;
-            @media screen and (min-width: 700px){
-                padding: 0;
-            }
-            padding-top: 0;
+            // padding: 0 7.5%;
             width: 100%;
             header{
                 padding:1rem;
@@ -49,6 +45,7 @@
                     @media screen and (min-width:700px){
                         font-size: 3rem;
                         letter-spacing: .25rem;
+                        padding: 2rem;
                     }
                 }
             }
@@ -62,6 +59,7 @@
 
                 justify-content: center;
                 height: 100%;
+                width: 100%;
                 align-items: center;
                 box-shadow: 5px 5px 0px 0px black;
                 border: solid black 3px;
@@ -71,73 +69,95 @@
                     padding-top: .5rem;
                     width: 100%;
                     display: flex;
-                    flex-direction: column;
-                    label{
-                        margin-right: auto;
+                    flex-wrap: wrap;
+                    .inputLabel{
                         display: flex;
-                        margin-top: .5rem;
-                        font-size: 1rem;
-                        @media screen and (min-width: 700px){
-                            font-size: 1.5rem;
-                            margin-top: 1rem;
+                        flex-direction: column;
+                        flex-grow: 1;
+                        padding: 0rem 1rem;
+                        gap: .25rem;
+                        input{
+                            width: 100%;
+
+                            box-shadow: 1px 1px 0px 0px black;
+                            border: solid black 3px;
+                            border-radius: .5rem;
+                            padding: .3rem;
+                        }
+                        label{
+                            margin-right: auto;
+                            display: flex;
+                            margin-top: .5rem;
+                            font-size: 1rem;
+                            @media screen and (min-width: 700px){
+                                font-size: 1.5rem;
+                                margin-top: 1rem;
+                            }
                         }
                     }
-                    input{
-                        width: 100%;
-                        box-shadow: 1px 1px 0px 0px black;
-                        border: solid black 3px;
-                        border-radius: .5rem;
-                        padding: .3rem;
-                    }
+             
+                    // PUT LABEL AND INPUT IN ITS OWN CONTAINERS
+   
                     
-                    input[type=submit]{
+                    .submitReturn{
                         width: 100%;
-                        margin-top: 1rem;
-                        margin-bottom: 1rem;
-
-                        box-shadow: 2px 2px 0px 0px black;
-                        border: solid black 3px;
-                        background-color: #5ed6cd;
-                        border-radius: 1.5rem;
-                        padding: .5rem;
-                        font-size: 1rem;
-                        font-family: Montserrat;
-                        font-weight: bold;
-                        font-style: italic;
-
-                        color: black;
-
-                        cursor: pointer;
-
-                        &:active{
-                            box-shadow: none;
-                            transform: translateX(5px);
-                            transform: translateY(5px);
+                        display: flex;
+                        justify-content: center;
+                        flex-direction: column;
+                        align-items: center;
+                        input[type=submit]{
+                            width: 100%;
+                            @media screen and (min-width: 700px){
+                                width: 75%;
+                            }
+                            margin-top: 1rem;
+                            margin-bottom: 1rem;
+    
+                            box-shadow: 2px 2px 0px 0px black;
+                            border: solid black 3px;
+                            background-color: #5ed6cd;
+                            border-radius: 1.5rem;
+                            padding: .5rem;
+                            font-size: 1rem;
+                            font-family: Montserrat;
+                            font-weight: bold;
+                            font-style: italic;
+    
+                            color: black;
+    
+                            cursor: pointer;
+    
+                            &:active{
+                                box-shadow: none;
+                                transform: translateX(5px);
+                                transform: translateY(5px);
+                            }
                         }
-                    }
-                    .return-to-dashboard{                
-                        background-color: #E8B987;
-                        padding: .5rem;
-                        box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
-                        border: solid;
-                        border-color: black;
-                        border-radius: 15px;
-                        border-width: 3px;
-                        cursor: pointer;
-
-                        color: black;
-                        font-size: 1rem;
-                        font-family: Montserrat;
-                        font-weight: bold;
-                        font-style: italic;
-                        text-align: center;
-                        width: 100%;
-                        &:active{
-                            box-shadow: none;
-                            transform: translateX(5px);
-                            transform: translateY(5px);
+                        .return-to-dashboard{                
+                            background-color: #E8B987;
+                            width: 100%;
+                            padding: .5rem;
+                            box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+                            border: solid;
+                            border-color: black;
+                            border-radius: 15px;
+                            border-width: 3px;
+                            cursor: pointer;
+    
+                            color: black;
+                            font-size: 1rem;
+                            font-family: Montserrat;
+                            font-weight: bold;
+                            font-style: italic;
+                            text-align: center;
+                            width: 100%;
+                            &:active{
+                                box-shadow: none;
+                                transform: translateX(5px);
+                                transform: translateY(5px);
+                            }
+    
                         }
-
                     }
                     span{
                         text-decoration: underline;
