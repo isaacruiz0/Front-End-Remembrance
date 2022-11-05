@@ -5,7 +5,9 @@
     letter-spacing: 1px;
     overflow: auto;
     padding: 0;
-
+    svg{
+        z-index: 0;
+    }
     span{
         background-color: #E8B987;
         position: absolute;
@@ -15,7 +17,7 @@
         font-size: 2rem;
         border: solid 3.5px;
 
-        z-index: 1000;
+        
         pointer-events: none;
         user-select: none;
         transition: opacity .25s ease-in-out;
@@ -31,10 +33,15 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        z-index: 2;
 
         .person-box{
             // padding: 0 7.5%;
             width: 100%;
+            z-index: 1000;
+            @media screen and (max-width: 700px){
+                padding: 1rem;
+            }
             header{
                 padding:1rem;
                 h1{
@@ -56,6 +63,7 @@
                 row-gap: 1rem;
                 padding: 1.75rem;
                 padding-top: 0;
+                z-index: 100000;
 
                 justify-content: center;
                 height: 100%;
@@ -76,6 +84,11 @@
                         flex-grow: 1;
                         padding: 0rem 1rem;
                         gap: .25rem;
+
+                        @media screen and (max-width: 700px){
+                            width: 50%;
+                            padding: 0rem .5rem;
+                        }
                         input{
                             width: 100%;
 
@@ -83,12 +96,16 @@
                             border: solid black 3px;
                             border-radius: .5rem;
                             padding: .3rem;
+                            font-size: 1.15rem;
+                            @media screen and (max-width: 700px){
+                                font-size: 1rem;
+                            }
                         }
                         label{
                             margin-right: auto;
                             display: flex;
                             margin-top: .5rem;
-                            font-size: 1rem;
+                            font-size: 1,25rem;
                             @media screen and (min-width: 700px){
                                 font-size: 1.5rem;
                                 margin-top: 1rem;
